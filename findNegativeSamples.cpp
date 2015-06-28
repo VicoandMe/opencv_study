@@ -16,7 +16,7 @@ int get_NegativeSamples() {
   fstream file1;
   file1.open("./bg.txt",ios::out|ios::in);
   int countn = 0;
-  for(int index = 1; index < 18; index++) {
+  for(int index = 1; index < 22; index++) {
   stringstream s1;
   s1<<index;
   string t;

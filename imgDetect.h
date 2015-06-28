@@ -39,4 +39,7 @@ cv::Mat ReadImages(std::string& FileName);
 
 cv::Mat ReadLabels(std::string& FileName);
 int get_trainingImage();
+int get_trainingImageLable();
+int get_testImage();
+int get_testImageLable();
 #endif

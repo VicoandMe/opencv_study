@@ -142,3 +142,62 @@ int get_trainingImage() {
     file1 << "trainImg/" + n + ".jpg" + " " +"1 0 0 27 27\n";
     }
 }
+
+int get_trainingImageLable() {
+   string labeName = "train-labels.idx1-ubyte";
+   cv::Mat b = ReadLabels(labeName);
+   //cout<<b<<endl;
+   fstream file1;
+   file1.open("./trainingLabels.txt",ios::out|ios::in);
+   for(int i = 0; i < 59999;i++) {
+     uchar* data = b.ptr<uchar>(i);
+     //cout<<(int)data[0]<<endl;
+     file1<<(char)(data[0] + '0')<<',';
+   }
+   uchar* data = b.ptr<uchar>(59999);
+   file1<<(char)(data[0] + '0');
+   file1.close();
+}
+
+int get_testImage() {
+  string imgName = "t10k-images.idx3-ubyte";
+  string labeName = "t10k-labels.idx1-ubyte";
+  cv::Mat a = ReadImages(imgName);
+  cv::Mat b = ReadLabels(labeName);
+  cv::Mat M(28, 28, CV_8UC1,Scalar::all(0));
+
+  fstream file1;
+  file1.open("./testInfo.txt",ios::out|ios::in);
+  for(int num = 0; num < 10000; num++) {
+    uchar* data = a.ptr<uchar>(num);
+    for (int j = 0; j < 28; j++) {
+      uchar* Mdata = M.ptr<uchar>(j);
+      for (int i = 0; i < 28; i++) {
+        Mdata[i] = data[j*28 + i];
+      }
+    }
+    stringstream ss;
+    ss << num;
+    string n;
+    ss>>n;
+    cout<<n<<endl;
+    imwrite("./testImg/"+n+".jpg",M);
+    file1 << "testImg/" + n + ".jpg" + " " +"1 0 0 27 27\n";
+    }
+}
+
+int get_testImageLable() {
+   string labeName = "t10k-labels.idx1-ubyte";
+   cv::Mat b = ReadLabels(labeName);
+   //cout<<b<<endl;
+   fstream file1;
+   file1.open("./testLabels.txt",ios::out|ios::in);
+   for(int i = 0; i < 9999;i++) {
+     uchar* data = b.ptr<uchar>(i);
+     //cout<<(int)data[0]<<endl;
+     file1<<(char)(data[0] + '0')<<',';
+   }
+   uchar* data = b.ptr<uchar>(9999);
+   file1<<(char)(data[0] + '0');
+   file1.close();
+}

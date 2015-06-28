@@ -52,8 +52,14 @@
 			<Add library="../../../../../usr/local/lib/libopencv_calib3d.so" />
 			<Add directory="../../../../../usr/lib" />
 		</Linker>
+		<Unit filename="Neural_network" />
+		<Unit filename="Neural_network.cpp" />
+		<Unit filename="Neural_network.h" />
+		<Unit filename="findNegativeSamples.cpp" />
+		<Unit filename="findNegativeSamples.h" />
 		<Unit filename="imgDetect.cpp" />
 		<Unit filename="imgDetect.h" />
+		<Unit filename="main.cpp" />
 		<Unit filename="project3.depend" />
 		<Extensions>
 			<code_completion />
