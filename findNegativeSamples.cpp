@@ -23,11 +23,19 @@ int get_NegativeSamples() {
   s1>>t;
   Mat imgsrc = imread(t + ".jpg");
 
-  resize(imgsrc,imgsrc,Size(420,364),0,0,CV_INTER_LINEAR);
+  //resize(imgsrc,imgsrc,Size(420,364),0,0,CV_INTER_LINEAR);
   cvtColor(imgsrc,imgsrc,CV_BGR2GRAY);
 
-  for (int i = 0; i < 420-100;i = i + 5) {
-    for (int j = 0; j < 364 - 100; j = j + 25) {
+  for(int i = 0; i < imgsrc.rows;i++) {
+    uchar *p =imgsrc.ptr<uchar>(i);
+    for(int t = 0; t < imgsrc.cols; t++) {
+     p[t] = 255 - p[t];
+      //cout<<((char)p[t] + '0')<<endl;
+    }
+  }
+
+  for (int i = 0; i < imgsrc.cols-100;i = i + 5) {
+    for (int j = 0; j < imgsrc.rows - 100; j = j + 25) {
       Mat imgdst(imgsrc(Rect(i,j,100,100)));
       countn++;
       stringstream ss;

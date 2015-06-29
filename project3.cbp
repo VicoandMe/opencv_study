@@ -61,6 +61,8 @@
 		<Unit filename="imgDetect.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="project3.depend" />
+		<Unit filename="svm_pre.cpp" />
+		<Unit filename="svm_pre.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

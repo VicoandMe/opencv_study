@@ -166,7 +166,7 @@
 	<set>
 	<valarray>
 
-1435472243 source:/home/liang/Desktop/vr/project3/findNegativeSamples.cpp
+1435489254 source:/home/liang/Desktop/vr/project3/findNegativeSamples.cpp
 	"opencv2/opencv.hpp"
 	"opencv2/highgui/highgui.hpp"
 	"opencv2/core/core.hpp"
@@ -179,7 +179,7 @@
 	<math.h>
 	<fstream>
 
-1435481116 source:/home/liang/Desktop/vr/project3/main.cpp
+1435543841 source:/home/liang/Desktop/vr/project3/main.cpp
 	<iostream>
 	<stdio.h>
 	"imgDetect.h"
@@ -189,13 +189,14 @@
 	"opencv2/highgui/highgui.hpp"
 	"opencv2/imgproc/imgproc.hpp"
 	"opencv2/ml/ml.hpp"
+	"svm_pre.h"
 
 1435391458 /home/liang/Desktop/vr/project3/findNegativeSamples.h
 
-1435479810 source:/home/liang/Desktop/vr/project3/Neural_network.cpp
+1435556421 source:/home/liang/Desktop/vr/project3/Neural_network.cpp
 	"Neural_network.h"
 
-1435481244 /home/liang/Desktop/vr/project3/Neural_network.h
+1435554400 /home/liang/Desktop/vr/project3/Neural_network.h
 	<iostream>
 	<stdio.h>
 	<string>
@@ -216,4 +217,16 @@
 	"opencv2/ml/ml.hpp"
 	"opencv2/opencv.hpp"
 	"opencv2/core/core.hpp"
+
+1435497358 /home/liang/Desktop/vr/project3/svm_pre.cpp
+	<fstream>
+	"opencv2/opencv.hpp"
+	<vector>
+
+1435497386 source:/home/liang/Desktop/vr/project3/svm_pre.cpp
+
+1435543956 /home/liang/Desktop/vr/project3/svm_pre.h
+	<fstream>
+	"opencv2/opencv.hpp"
+	<vector>
 

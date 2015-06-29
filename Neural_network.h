@@ -28,19 +28,19 @@
 using namespace std;
 
 struct tra {
-  int a[8][8];
+  int a[28][28];
   int value;
 };
 
 static unsigned int seed = 0;
 
 struct node {
-  double w[8][8];
+  double w[28][28];
   node() {
-    for(int i =  0; i < 8; i++) {
-        for(int a = 0; a < 8; a++) {
+    for(int i =  0; i < 28; i++) {
+        for(int a = 0; a < 28; a++) {
           srand(seed++);
-          w[i][a] = (rand()%10)/10-0.5;
+          w[i][a] = (rand()%20)/10-0.5;
         }
     }
   }
@@ -51,7 +51,8 @@ struct node1 {
 	double w[10];
 	node1() {
 		for(int i =  0; i < 10; i++) {
-				w[i] = 0.0;
+			srand(seed++);
+			w[i] = (rand()%10)/10-0.5;
 		}
 	}
 };
