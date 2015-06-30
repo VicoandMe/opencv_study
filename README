@@ -1,0 +1,54 @@
+开发环境：ubuntu14.04
+          Opencv 2.4.10
+
+IDE: Code::block
+
+文件说明：
+        /bin                                可执行文件
+        /negative_samples adaboost          训练负样本
+        /trainImg                           MNIST训练集图片
+        trainingLabels.txt                  MNIST训练集Labels
+        /xml                                adaboost训练的输出目录
+
+        [1-n].jpg                           用于生成adaboost训练负样本的图片
+
+        adaboost_train.sh                   执行create_sample和haartrain的sh脚本
+
+        bg.txt                              负样本目录
+        info.txt                            正样本及训练集目录
+        pos.vec                             create_sample生成的正样本库
+
+
+        num_test.xml                        adaboost训练生成的配置文件
+        num_test.jpg                        adaboost测试图片
+        
+        result*.jpg                         adaboost测试结果
+
+        SVM_DATA.xml                        SVM训练结果配置文件
+ 
+        /testImg                            MNIST测试集图片       
+        testInfo.txt                        MNIST测试集图片目录
+        testLabels.txt                      MNIST测试集Labels
+
+        
+src：   
+        /findNegativeSamples               裁剪图片生成负样本
+        /imgDetect                         获取MNIST样本库中的信息
+        /Neural_network                    bp神经网络进行手写数字识别，使用MNIST训练和测试
+        /svm_pre                           使用opencv_SVM进行手写数字识别，使用MNIST训练和测试
+        /main                              控制及测试
+
+
+使用方法：
+
+Step1：        首先修改源代码中的路径并编译
+Step2：        修改sh文件中的文件路径
+Step3：        使用Step1中编译的可执行文件使用功能1生成负样本
+Step4：        执行功能2、3获取MNIST训练集图片和Lables
+Step5：        执行sh文件进行生成正样本和训练
+Step6：        修改xml.xml为num_test.xml
+Step7：        可以执行功能4检测训练生成的分类器，需要自己挑参数获得最好的结果
+Step8：        可以执行功能6、7获得MNIST_test的图片及Lables
+Step9：        分别执行功能5可以训练神经网络
+Step10：       执行功能8测试神经网络
+Step11：       执行功能9测试SVM
